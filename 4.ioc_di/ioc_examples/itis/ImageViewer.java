@@ -52,7 +52,6 @@ public class ImageViewer {
     mainFrame.setVisible(true);
     
     // Exit by ESC
-    // Get status by SPACE
     mainFrame.addKeyListener(new KeyAdapter() {
       @Override
       public void keyPressed(KeyEvent ke) {  // handler
@@ -62,7 +61,6 @@ public class ImageViewer {
       }
     });
     
-    // Main panel
     mainPanel = new imagePanel();
     mainFrame.getContentPane().add(mainPanel);
     
