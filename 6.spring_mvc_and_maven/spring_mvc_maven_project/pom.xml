@@ -93,9 +93,9 @@
 		    <artifactId>tomcat7-maven-plugin</artifactId>
 		    <version>2.2</version>
 		    <configuration>
-			    <url>http://bookstore:8080/manager/text</url>
-			    <server>tomcat7</server>
-			    <path>/</path>
+			    <url>http://localhost:8080/manager/text</url>
+			    <server>mytomcat7</server>
+			    <path>/bs</path>
 			    <update>true</update>
 		    </configuration>
 	    </plugin>
