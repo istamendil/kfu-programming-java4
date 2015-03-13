@@ -32,7 +32,7 @@ public class SpringController {
   }
 
   @RequestMapping(value = "/new_author", method = RequestMethod.POST)
-  public String jsr303Handler(
+  public String springHandler(
     RedirectAttributes redirectAttributes,
     @Validated Author author,
     BindingResult result,
