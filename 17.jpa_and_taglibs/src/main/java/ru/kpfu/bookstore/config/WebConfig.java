@@ -13,7 +13,7 @@ import org.springframework.web.servlet.view.UrlBasedViewResolver;
 @Configuration
 @ComponentScan("ru.kpfu.bookstore")
 @EnableWebMvc
-public class Config extends WebMvcConfigurerAdapter {
+public class WebConfig extends WebMvcConfigurerAdapter {
 
   @Bean
   public UrlBasedViewResolver setupViewResolver() {
