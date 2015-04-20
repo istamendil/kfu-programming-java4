@@ -1,25 +1,44 @@
 package ru.kpfu.bookstore.config;
 
-import org.springframework.web.context.WebApplicationContext;
-import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
-import org.springframework.web.servlet.support.AbstractDispatcherServletInitializer;
 
+/**
+ * Initializer of web-application. See
+ * http://docs.spring.io/spring/docs/current/spring-framework-reference/html/mvc.html#mvc-container-config
+ *
+ * @author Alexander Ferenets <istamendil.info>
+ */
 public class WebInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
-    @Override
-    protected Class<?>[] getRootConfigClasses() {
-        return new Class[] { DaoConfig.class };
-    }
+  /**
+   * Dao and other root components. Supercontainer that can't get components
+   * from child.
+   *
+   * @return
+   */
+  @Override
+  protected Class<?>[] getRootConfigClasses() {
+    return new Class[]{RootConfig.class, SecurityConfig.class};
+  }
 
-    @Override
-    protected Class<?>[] getServletConfigClasses() {
-        return new Class[] { WebConfig.class };
-    }
+  /**
+   * Controllers and other web components. Subcontainer that can get components
+   * from parent.
+   *
+   * @return
+   */
+  @Override
+  protected Class<?>[] getServletConfigClasses() {
+    return new Class[]{WebConfig.class};
+  }
 
-    @Override
-    protected String[] getServletMappings() {
-        return new String[] { "/" };
-    }
-
+  /**
+   * Register paths to handle.
+   *
+   * @return
+   */
+  @Override
+  protected String[] getServletMappings() {
+    return new String[]{"/"};
+  }
 }

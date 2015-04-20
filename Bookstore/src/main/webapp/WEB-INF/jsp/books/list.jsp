@@ -4,6 +4,9 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
+<%--
+  Creating own tags and simple templating system : http://stackoverflow.com/questions/1296235/jsp-tricks-to-make-templating-easier
+--%>
 <t:mainLayout title="All books">
   <div class="text-info">Books in DB: ${fn:length(books)}</div>
   <div class="books-list">
@@ -14,8 +17,9 @@
           <div class="book-header">
             <h3 class="book-name"><a href="${spring:mvcUrl("BC#show").arg(0, book.id).build()}">${book.name}</a></h3>
             <span class="book-url"><a href="${book.url}" target="_blank"><i class="glyphicon glyphicon-new-window"></i></a></span>
-            <span class="book-info">${book.year}</span>
-            <div class="book-delete"><a href="${spring:mvcUrl("BC#delete").arg(0, book.id).build()}"><i class="glyphicon glyphicon-remove"></i></a></div>
+            <span class="book-info">${book.year}, ${book.publishingHouse.name}</span>
+            <div class="book-action-icon"><a href="${spring:mvcUrl("BC#delete").arg(0, book.id).build()}" class="delete"><i class="glyphicon glyphicon-remove"></i></a></div>
+            <div class="book-action-icon"><a href="${spring:mvcUrl("BC#edit").arg(0, book.id).build()}" class="edit"><i class="glyphicon glyphicon-edit"></i></a></div>
             <div class="clearfix"></div>
           </div>
           <div class="book-description">${book.description}</div>

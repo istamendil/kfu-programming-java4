@@ -1,6 +1,12 @@
 <%@tag description="Default Layout Tag" pageEncoding="UTF-8"%>
-<%@attribute name="title" %>
+
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<%@attribute name="title" %>
+  
+<%--
+  Creating own tags and simple templating system : http://stackoverflow.com/questions/1296235/jsp-tricks-to-make-templating-easier
+--%>
 
 <c:if test="${not empty messageType}" >
   <c:choose>
@@ -18,8 +24,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>
-      Bookstore
-      <c:if test="${not empty title}" >:: ${title}</c:if>
+      Bookstore<c:if test="${not empty title}" > :: ${title}</c:if>
       </title>
 
       <script type="text/javascript" src="<c:url value="/resources/js/jquery-2.1.3.min.js" />"></script>

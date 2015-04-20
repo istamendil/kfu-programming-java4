@@ -24,13 +24,17 @@ form{
 .books-list .book-header .book-info{
   color:#999;
 }
-.books-list .book-header .book-delete{
+.books-list .book-header .book-action-icon{
   float:right;
   font-size:1.2em;
   font-weight:bold;
+  margin:0px 5px;
 }
-.books-list .book-header .book-delete a{
+.books-list .book-header .book-action-icon a.delete{
   color:#933;  
+}
+.books-list .book-header .book-action-icon a.edit{
+  color:#393;  
 }
 .books-list .book-header .book-name{
   display:inline-block;

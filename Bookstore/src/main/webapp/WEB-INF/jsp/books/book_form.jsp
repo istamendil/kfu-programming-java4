@@ -4,9 +4,17 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<t:mainLayout title="New">
+<%--
+  Creating own tags and simple templating system : http://stackoverflow.com/questions/1296235/jsp-tricks-to-make-templating-easier
+--%>
+<t:mainLayout title="New book">
+  <%--
+    Creating own form tags as spring form tags wrappers: http://duckranger.com/2012/07/spring-mvc-and-twitter-bootstrap-customizing-the-input-fields/
+  --%>
   <form:form class="form-horizontal" method="POST" commandName="book">
+    <form:errors path="" />
     <t:input label="Name" required="true" path="name"/>
+    <t:select label="Publishing House" required="true" path="publishingHouse" options="${publishingHouses}"/>
     <t:input label="Published" required="true" path="year"/>
     <t:input label="Pages" required="true" path="pages"/>
     <t:input label="ISBN" required="true" path="isbn"/>

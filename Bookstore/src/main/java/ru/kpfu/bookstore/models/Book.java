@@ -1,44 +1,45 @@
 package ru.kpfu.bookstore.models;
 
-import java.io.Serializable;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import org.hibernate.validator.constraints.*;
 
 @Entity
 @Table(name = "book")
-public class Book implements Serializable {
+public class Book{
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   @Column(name = "id", unique = true, nullable = false)
   private int id;
   
-  @Size(min = 1, max = 255)
-  @Column(name = "name")
-  private String name;
-  
   @Length(max = 65535)
-  @Column(name = "description")
   private String description;
   
+  @NotNull
   @Pattern(regexp = "[0-9]{10,14}")
-  @Column(name = "isbn", unique = true)
+  @Column(unique = true)
   private String isbn;
   
   @NotNull
-  @Range(min = 0L, max = 9999L)
-  @Column(name = "year")
-  private Integer year;
+  @Size(min = 1, max = 255)
+  private String name;
   
   @NotNull
   @Range(min = 0L, max = 9999L)
-  @Column(name = "pages")
   private Integer pages;
   
+  @NotNull
+  @ManyToOne(fetch = FetchType.EAGER)
+  @JoinColumn(name = "publishing_house", nullable = false)
+  private PublishingHouse publishingHouse;
+  
   @URL
-  @Column(name = "url")
   private String url;
+  
+  @NotNull
+  @Range(min = 0L, max = 9999L)
+  private Integer year;
 
   public Book(){}
   public Book(int id, String name) {
@@ -100,6 +101,14 @@ public class Book implements Serializable {
 
   public void setUrl(String url) {
     this.url = url;
+  }
+
+  public PublishingHouse getPublishingHouse() {
+    return publishingHouse;
+  }
+
+  public void setPublishingHouse(PublishingHouse publishingHouse) {
+    this.publishingHouse = publishingHouse;
   }
   
   

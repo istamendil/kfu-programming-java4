@@ -4,11 +4,6 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<t:mainLayout title="abc">
-    <h1>Exception</h1>
-    <h2>Failed URL: ${url}</h2>
-    <h3>Exception:  ${exception.message}</h3>
-    <c:forEach items="${exception.stackTrace}" var="ste">
-      ${ste}<br>
-    </c:forEach>
+<t:mainLayout title="404">
+    <h1>404. ${exception.entity} wasn't found.</h1>
 </t:mainLayout>
