@@ -30,12 +30,6 @@ form{
   font-weight:bold;
   margin:0px 5px;
 }
-.books-list .book-header .book-action-icon a.delete{
-  color:#933;  
-}
-.books-list .book-header .book-action-icon a.edit{
-  color:#393;  
-}
 .books-list .book-header .book-name{
   display:inline-block;
   font-style: italic;

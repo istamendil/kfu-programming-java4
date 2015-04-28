@@ -7,19 +7,22 @@
 <%--
   Creating own tags and simple templating system : http://stackoverflow.com/questions/1296235/jsp-tricks-to-make-templating-easier
 --%>
-<t:mainLayout title="Book">
+<t:mainLayout title="User">
   <%--
     Creating own form tags as spring form tags wrappers: http://duckranger.com/2012/07/spring-mvc-and-twitter-bootstrap-customizing-the-input-fields/
   --%>
-  <form:form class="form-horizontal" method="POST" commandName="book">
-    <form:errors path="" />
-    <t:input label="Name" required="true" path="name"/>
-    <t:select label="Publishing House" required="true" path="publishingHouse" options="${publishingHouses}"/>
-    <t:input label="Published" required="true" path="year"/>
-    <t:input label="Pages" required="true" path="pages"/>
-    <t:input label="ISBN" required="true" path="isbn"/>
-    <t:input label="Link" required="false" path="url"/>
-    <t:textarea label="Description" required="false" path="description"/>
+  <form:form class="form-horizontal" method="POST" commandName="user">
+    <form:hidden path="id" required="true"/>
+    <t:input label="Name" path="fullName" required="true"/>
+    <div class="form-group">
+      <div class="control-label col-sm-3">Roles:</div>
+      <div class="controls col-sm-9">
+        <form:checkboxes path="authorities" element="div" items="${authorities}" itemValue="id" itemLabel="authority" />
+        <%-- <form:select path="authorities" items="${authorities}" itemValue="id" itemLabel="authority" multiple="true" /> --%>
+      </div>
+      <form:errors path="authorities" />
+      <form:errors path="" />
+    </div>
 
     <button type="submit" class="btn btn-success">Save</button>
   </form:form>

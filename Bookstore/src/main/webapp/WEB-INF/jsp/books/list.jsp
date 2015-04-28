@@ -12,14 +12,14 @@
   <div class="books-list">
   <c:choose>
     <c:when test="${not empty books}">
-      <c:forEach var="book" items="${books}" varStatus="counter">
+      <c:forEach var="book" items="${books}" varStatus="loop">
         <div class="book-card">
           <div class="book-header">
             <h3 class="book-name"><a href="${spring:mvcUrl("BC#show").arg(0, book.id).build()}">${book.name}</a></h3>
             <span class="book-url"><a href="${book.url}" target="_blank"><i class="glyphicon glyphicon-new-window"></i></a></span>
             <span class="book-info">${book.year}, ${book.publishingHouse.name}</span>
-            <div class="book-action-icon"><a href="${spring:mvcUrl("BC#delete").arg(0, book.id).build()}" class="delete"><i class="glyphicon glyphicon-remove"></i></a></div>
-            <div class="book-action-icon"><a href="${spring:mvcUrl("BC#edit").arg(0, book.id).build()}" class="edit"><i class="glyphicon glyphicon-edit"></i></a></div>
+            <div class="book-action-icon"><a href="${spring:mvcUrl("BC#delete").arg(0, book.id).build()}" class="text-danger"><i class="glyphicon glyphicon-remove"></i></a></div>
+            <div class="book-action-icon"><a href="${spring:mvcUrl("BC#edit").arg(0, book.id).build()}" class="text-success"><i class="glyphicon glyphicon-edit"></i></a></div>
             <div class="clearfix"></div>
           </div>
           <div class="book-description">${book.description}</div>

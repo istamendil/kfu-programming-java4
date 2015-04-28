@@ -12,7 +12,7 @@ import ru.kpfu.bookstore.exceptions.NotFoundException;
  * Handle exceptions and show proper views.
  * @author Alexander Ferenets <istamendil.info>
  */
-//@ControllerAdvice
+@ControllerAdvice
 public class ExceptionHandlerController{
   
   /**
@@ -21,7 +21,7 @@ public class ExceptionHandlerController{
    * @param exception
    * @return 
    */
-  @ExceptionHandler(Throwable.class)
+  //@ExceptionHandler(Throwable.class)
   @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
   public ModelAndView notFound2(HttpServletRequest req, Exception exception) {
     ModelAndView mav = new ModelAndView();
