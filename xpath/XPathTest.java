@@ -16,7 +16,7 @@ import org.xml.sax.SAXException;
  * @author ALexander Ferenets <istamendil.info>
  */
 public class XPathTest {
-  private static final String XML_URI   = "http://www.w3schools.com/xpath/books.xml";
+  private static final String XML_URI   = "http://www.w3schools.com/xsl/books.xml";
   private static final String EXPRESSION = "//price";
 
   /**
