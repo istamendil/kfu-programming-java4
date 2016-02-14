@@ -17,3 +17,7 @@ hs_err_pid*
 app.properties
 target/
 nbactions.xml
+manifest.mf
+build.xml
+build/
+nbproject/
