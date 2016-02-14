@@ -15,5 +15,5 @@ hs_err_pid*
 *~
 
 app.properties
-/04.ioc_di/another_task/target/
-/21.converters/beans_task/target/
+target/
+nbactions.xml
