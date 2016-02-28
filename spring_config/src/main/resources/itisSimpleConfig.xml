@@ -7,6 +7,6 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="book" class="itis.Book" />
+    <bean id="book" class="info.istamendil.study.springconfig.Book" />
 
 </beans>
