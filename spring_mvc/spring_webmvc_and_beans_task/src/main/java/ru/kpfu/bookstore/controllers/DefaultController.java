@@ -1,19 +1,24 @@
 package ru.kpfu.bookstore.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import ru.kpfu.bookstore.services.MyService;
 
+/**
+ * 
+ * Code for studying purposes.
+ * Programming course. Kazan Federal University, ITIS.
+ * http://study.istamendil.info/
+ * 
+ * @author Alexander Ferenets (Istamendil) <ist.kazan@gmail.com>
+ */
 @Controller
 public class DefaultController {
-  @Autowired
-  private MyService service;
   
   @RequestMapping("/")
   @ResponseBody
   public String index(){
-    return service.getMessage();
+//    return messageService.getHello();
+    return "Hello world from controller";
   }
 }

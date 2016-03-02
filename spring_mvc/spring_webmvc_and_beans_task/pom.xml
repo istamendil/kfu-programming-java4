@@ -8,18 +8,19 @@
   <groupId>ru.kpfu</groupId>
   <artifactId>bookstore</artifactId>
   <packaging>war</packaging>
-  <version>1.0-Alpha</version>
+  <version>1.0</version>
   
   <name>Book Store</name>
 
   <properties>
     <!-- Generic properties -->
-    <java.version>1.7</java.version>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
     <!-- Spring -->
-    <spring-framework.version>4.1.6.RELEASE</spring-framework.version>
+    <spring.version>4.2.4.RELEASE</spring.version>
 
     <!-- Java EE / Java SE dependencies -->
     <java.web.api.version>7.0</java.web.api.version>
@@ -46,37 +47,37 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-aop</artifactId>
-      <version>${spring-framework.version}</version>
+      <version>${spring.version}</version>
     </dependency>
     
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-beans</artifactId>
-      <version>${spring-framework.version}</version>
+      <version>${spring.version}</version>
     </dependency>
     
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
-      <version>${spring-framework.version}</version>
+      <version>${spring.version}</version>
     </dependency>
     
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-core</artifactId>
-      <version>${spring-framework.version}</version>
+      <version>${spring.version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-web</artifactId>
-      <version>${spring-framework.version}</version>
+      <version>${spring.version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
-      <version>${spring-framework.version}</version>
+      <version>${spring.version}</version>
     </dependency>
   </dependencies>
 
@@ -84,37 +85,10 @@
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.1</version>
-        <configuration>
-          <source>${java.version}</source>
-          <target>${java.version}</target>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
-        <version>2.3</version>
+        <version>2.6</version>
         <configuration>
           <failOnMissingWebXml>false</failOnMissingWebXml>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.12.4</version>
-        <configuration>
-          <skipTests>true</skipTests>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <version>2.4</version>
-        <configuration>
-          <descriptorRefs>
-            <descriptorRef>jar-with-dependencies</descriptorRef>
-          </descriptorRefs>
         </configuration>
       </plugin>
     </plugins>

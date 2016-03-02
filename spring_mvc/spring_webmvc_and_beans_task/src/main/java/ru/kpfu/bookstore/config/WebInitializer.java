@@ -3,8 +3,13 @@ package ru.kpfu.bookstore.config;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 /**
+ * 
  * Initializer of web-application. See
  * http://docs.spring.io/spring/docs/current/spring-framework-reference/html/mvc.html#mvc-container-config
+ * 
+ * Code for studying purposes.
+ * Programming course. Kazan Federal University, ITIS.
+ * http://study.istamendil.info/
  *
  * @author Alexander Ferenets <istamendil.info>
  */

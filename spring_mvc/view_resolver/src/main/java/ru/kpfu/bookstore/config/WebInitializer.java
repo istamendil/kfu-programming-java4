@@ -5,6 +5,13 @@ import org.springframework.web.context.support.AnnotationConfigWebApplicationCon
 import org.springframework.web.servlet.support.AbstractDispatcherServletInitializer;
 
 
+/**
+ * Code for studying purposes.
+ * Programming course. Kazan Federal University, ITIS.
+ * http://study.istamendil.info/
+ * 
+ * @author Alexander Ferenets <istamendil.info>
+ */
 public class WebInitializer extends AbstractDispatcherServletInitializer {
 
     @Override
