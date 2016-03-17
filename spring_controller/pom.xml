@@ -11,17 +11,18 @@
   <version>1.0-SNAPSHOT</version>
   
   <name>Book Store</name>
-  <url>http://bookstore:8080/</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <spring.version>4.1.5.RELEASE</spring.version>
+    <spring.version>4.2.4.RELEASE</spring.version>
     <jstl.version>1.2</jstl.version>
-    <javax.servlet.version>3.0.1</javax.servlet.version>
-    <jdk.version>1.7</jdk.version>
+    <javax.servlet.version>3.1.0</javax.servlet.version>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
   
   <dependencies>
+  
     <dependency>
       <groupId>javax</groupId>
       <artifactId>javaee-web-api</artifactId>
@@ -65,40 +66,12 @@
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.1</version>
-        <configuration>
-          <source>${jdk.version}</source>
-          <target>${jdk.version}</target>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
         <version>2.3</version>
         <configuration>
           <failOnMissingWebXml>false</failOnMissingWebXml>
         </configuration>
       </plugin>
-      <plugin>
-	      <groupId>org.apache.maven.plugins</groupId>
-	      <artifactId>maven-surefire-plugin</artifactId>
-	      <version>2.12.4</version>
-	      <configuration>
-		      <skipTests>true</skipTests>
-	      </configuration>
-      </plugin>
-      <plugin>
-		    <groupId>org.apache.tomcat.maven</groupId>
-		    <artifactId>tomcat7-maven-plugin</artifactId>
-		    <version>2.2</version>
-		    <configuration>
-			    <url>http://localhost:8080/manager/text</url>
-			    <server>mytomcat7</server>
-			    <path>/bs</path>
-			    <update>true</update>
-		    </configuration>
-	    </plugin>
     </plugins>
   </build>
   
