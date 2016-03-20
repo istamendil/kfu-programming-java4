@@ -27,11 +27,11 @@
       Bookstore<c:if test="${not empty title}" > :: ${title}</c:if>
       </title>
 
-      <script type="text/javascript" src="<c:url value="/resources/js/jquery-2.1.3.min.js" />"></script>
-      <script type="text/javascript" src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
+      <script type="text/javascript" src="<c:url value="/assets/js/jquery-2.1.3.min.js" />"></script>
+      <script type="text/javascript" src="<c:url value="/assets/js/bootstrap.min.js" />"></script>
 
-    <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
-    <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
+    <link href="<c:url value="/assets/css/bootstrap.min.css" />" rel="stylesheet">
+    <link href="<c:url value="/assets/css/style.css" />" rel="stylesheet">
   </head>
   <body>
     <jsp:include page="/WEB-INF/jsp/blocks/menu_main.jsp"/>
