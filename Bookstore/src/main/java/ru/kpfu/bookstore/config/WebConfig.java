@@ -32,7 +32,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 
   @Override
   public void addResourceHandlers(ResourceHandlerRegistry registry) {
-    registry.addResourceHandler("/resources/**").addResourceLocations("/WEB-INF/resources/");
+    registry.addResourceHandler("/assets/**").addResourceLocations("/WEB-INF/assets/");//ToDo: update to better paths
   }
 
   @Override
