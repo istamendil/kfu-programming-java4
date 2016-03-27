@@ -1,6 +1,7 @@
-package ru.kpfu.bookstore.controllers;
+package ru.kpfu.bookstore.controller;
 
 import javax.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -9,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import ru.kpfu.bookstore.Book;
+import ru.kpfu.bookstore.model.Book;
 
 @Controller
 @RequestMapping("/jsr303")
@@ -28,7 +29,6 @@ public class Jsr303Controller {
     BindingResult result,
     ModelMap map
   ) {
-    
     if (result.hasErrors()) {
       return "book_form";
     }

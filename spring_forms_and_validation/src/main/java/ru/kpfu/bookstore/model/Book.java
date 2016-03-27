@@ -1,4 +1,4 @@
-package ru.kpfu.bookstore;
+package ru.kpfu.bookstore.model;
 
 import javax.validation.constraints.*;
 

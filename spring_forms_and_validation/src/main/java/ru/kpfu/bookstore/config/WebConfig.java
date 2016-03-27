@@ -10,9 +10,9 @@ import org.springframework.web.servlet.view.JstlView;
 import org.springframework.web.servlet.view.UrlBasedViewResolver;
 
 @Configuration
-@ComponentScan("ru.kpfu.bookstore")
+@ComponentScan(basePackages = {"ru.kpfu.bookstore.controller"})
 @EnableWebMvc
-public class Config extends WebMvcConfigurerAdapter {
+public class WebConfig extends WebMvcConfigurerAdapter {
 
   @Bean
   public UrlBasedViewResolver setupViewResolver() {

@@ -18,7 +18,7 @@
       
       <form:label path="avatarUrl">Avatar url</form:label>
       <form:input path="avatarUrl" />
-      <form:errors path="avatarUrl" /><br>
+      <form:errors path="avatarUrl" /><br><!-- Why no errors?  -->
       
       <input type="submit" value="Submit" />
     </form:form>

@@ -1,4 +1,4 @@
-package ru.kpfu.bookstore;
+package ru.kpfu.bookstore.model;
 
 public class Author {
   private String name;
