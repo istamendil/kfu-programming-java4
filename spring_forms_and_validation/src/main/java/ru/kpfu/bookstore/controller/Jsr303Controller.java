@@ -1,7 +1,6 @@
 package ru.kpfu.bookstore.controller;
 
 import javax.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -33,7 +32,6 @@ public class Jsr303Controller {
       return "book_form";
     }
     else {
-      map.put("book", new Book());
       redirectAttributes.addFlashAttribute("message", "<span style=\"color:green\">Book \""+book.getName()+"\" has been added successfully</span>");
       return "redirect:"+MvcUriComponentsBuilder.fromMappingName("JC#newBook").build();
     }

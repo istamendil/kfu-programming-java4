@@ -39,7 +39,6 @@ public class SpringController {
     if (result.hasErrors()) {
       return "author_form";
     } else {
-      map.put("author", new Author());
       redirectAttributes.addFlashAttribute("message", "<span style=\"color:green\">Author \"" + author.getName() + "\" has been added successfully</span>");
       return "redirect:" + MvcUriComponentsBuilder.fromMappingName("SC#newAuthor").build();
     }
