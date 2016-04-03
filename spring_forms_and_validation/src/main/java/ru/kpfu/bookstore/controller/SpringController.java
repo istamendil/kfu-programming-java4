@@ -6,6 +6,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder;
@@ -20,7 +21,7 @@ public class SpringController {
 
   @InitBinder
   private void initBinder(WebDataBinder binder) {
-    binder.setValidator(new AuthorValidator());
+    binder.setValidator(new AuthorValidator());// Task: NPE
   }
 
   @RequestMapping(value = "/new_author", method = RequestMethod.GET)
@@ -32,7 +33,7 @@ public class SpringController {
   @RequestMapping(value = "/new_author", method = RequestMethod.POST)
   public String springHandler(
     RedirectAttributes redirectAttributes,
-    @Validated Author author,
+    @Validated @ModelAttribute("author") Author author,
     BindingResult result,
     ModelMap map
   ) {

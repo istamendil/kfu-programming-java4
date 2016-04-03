@@ -4,6 +4,7 @@ import javax.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder;
@@ -24,7 +25,7 @@ public class Jsr303Controller {
   @RequestMapping(value = "/new_book", method = RequestMethod.POST)
   public String jsr303Handler(
     RedirectAttributes redirectAttributes,
-    @Valid Book book,
+    @Valid @ModelAttribute("book") Book book,
     BindingResult result,
     ModelMap map
   ) {
