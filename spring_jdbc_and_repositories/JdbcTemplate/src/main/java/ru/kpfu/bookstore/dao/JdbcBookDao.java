@@ -1,21 +1,21 @@
 package ru.kpfu.bookstore.dao;
 
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import ru.kpfu.bookstore.models.Book;
+import ru.kpfu.bookstore.model.Book;
 
 @Repository
-public class JdbcBookRepository implements BookRepository {
+public class JdbcBookDao implements BookDao { // What methods should we add by typical DAO definition?
 
   private JdbcTemplate jdbcTemplate;
 
   @Autowired
+  @Qualifier("dataSource")
   public void setDataSource(DataSource dataSource) {
     jdbcTemplate = new JdbcTemplate(dataSource);
   }
@@ -25,15 +25,13 @@ public class JdbcBookRepository implements BookRepository {
     Book book = jdbcTemplate.queryForObject(
       "select * from book where id = ?",
       new Object[]{id},
-      new RowMapper<Book>() {
-        @Override
-        public Book mapRow(ResultSet rs, int rowNum) throws SQLException {
-          Book book = new Book();
-          book.setId(rs.getInt("id"));
-          book.setName(rs.getString("name"));
-          return book;
-        }
-      });
+      (ResultSet rs, int rowNum) -> { // Lambda or RowMapper implementation
+        Book book1 = new Book();
+        book1.setId(rs.getInt("id"));
+        book1.setName(rs.getString("name"));
+        return book1;
+      }
+    );
     return book;
   }
 
