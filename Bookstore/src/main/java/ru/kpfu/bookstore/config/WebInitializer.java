@@ -11,7 +11,7 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 public class WebInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
   /**
-   * Dao and other root components. Supercontainer that can't get components
+   * Dao and other root components. Parent container that can't get components
    * from child.
    *
    * @return
@@ -22,8 +22,8 @@ public class WebInitializer extends AbstractAnnotationConfigDispatcherServletIni
   }
 
   /**
-   * Controllers and other web components. Subcontainer that can get components
-   * from parent.
+   * Controllers and other web components. Child container that can get 
+   * components from parent.
    *
    * @return
    */

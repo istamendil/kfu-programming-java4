@@ -17,7 +17,7 @@ import ru.kpfu.bookstore.models.PublishingHouse;
 import ru.kpfu.bookstore.models.UserAuthority;
 
 @Configuration
-@ComponentScan("ru.kpfu.bookstore")
+@ComponentScan("ru.kpfu.bookstore.controllers")
 @EnableWebMvc
 public class WebConfig extends WebMvcConfigurerAdapter {
 
@@ -32,7 +32,9 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 
   @Override
   public void addResourceHandlers(ResourceHandlerRegistry registry) {
-    registry.addResourceHandler("/assets/**").addResourceLocations("/WEB-INF/assets/");//ToDo: update to better paths
+    registry.addResourceHandler("/js/**").addResourceLocations("/WEB-INF/assets/js/");
+    registry.addResourceHandler("/css/**").addResourceLocations("/WEB-INF/assets/css/");
+    registry.addResourceHandler("/fonts/**").addResourceLocations("/WEB-INF/assets/fonts/");
   }
 
   @Override
