@@ -13,12 +13,12 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+import ru.kpfu.bookstore.services.UserService;
 
 /**
  *
  * @author Alexander Ferenets <istamendil.info>
  */
-@ComponentScan("ru.kpfu.bookstore")
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
@@ -50,5 +50,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
   public PasswordEncoder passwordEncoder() {
     PasswordEncoder encoder = new BCryptPasswordEncoder();
     return encoder;
+  }
+  
+  @Bean
+  public UserDetailsService userService(){
+    return new UserService();
   }
 }
