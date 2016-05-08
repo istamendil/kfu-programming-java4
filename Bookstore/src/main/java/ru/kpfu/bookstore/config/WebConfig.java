@@ -12,6 +12,7 @@ import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.JstlView;
 import org.springframework.web.servlet.view.UrlBasedViewResolver;
+import ru.kpfu.bookstore.models.Book;
 import ru.kpfu.bookstore.utils.StringToEntityConverter;
 import ru.kpfu.bookstore.models.PublishingHouse;
 import ru.kpfu.bookstore.models.UserAuthority;
@@ -50,10 +51,15 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 
   @Override
   public void addFormatters(FormatterRegistry formatterRegistry) {
+    formatterRegistry.addConverter(bookGenericConverter());
     formatterRegistry.addConverter(publishingHouseGenericConverter());
     formatterRegistry.addConverter(userAuthorityGenericConverter());
   }
 
+  @Bean
+  public StringToEntityConverter bookGenericConverter(){
+    return new StringToEntityConverter(Book.class);
+  }
   @Bean
   public StringToEntityConverter publishingHouseGenericConverter(){
     return new StringToEntityConverter(PublishingHouse.class);

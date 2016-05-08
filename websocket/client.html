@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <script>
+      function addMessage(message) {
+        var chatBox = document.getElementById("chat-box");
+        chatBox.innerHTML += "<p>" + (new Date()).toLocaleString() + ": " + message + "</p>";
+      }
+      function addAlert(message) {
+        var chatBox = document.getElementById("chat-box");
+        chatBox.innerHTML += "<p>" + (new Date()).toLocaleString() + ": <b>" + message + "</b></p>";
+      }
+      function init() {
+        webSocket = new WebSocket('ws://127.0.0.1:8080/chat');
+
+        webSocket.onopen = function (event) {
+          addAlert('Connection was opened.');
+        };
+
+        webSocket.onmessage = function (event) {
+          addAlert(event.data);
+        };
+
+        webSocket.onclose = function (event) {
+          addAlert('Connection was closed.');
+        };
+      }
+      function sendMessage() {
+        if (webSocket) {
+          var messageField = document.getElementById("message-field");
+          webSocket.send(messageField.value);
+          messageField.value = "";
+        }
+      }
+    </script>
+  </head>
+  <body onload="init();">
+    <h2 style="text-align: center">Websocket Chat</h2>
+    <div style="margin:30px auto;width:750px;">
+      <div id="chat-box" style="border:4px double black;height:500px;padding:5px;overflow-x:hidden;overflow-y:scroll;"></div>
+      <div style="float:right;margin-top:5px;">
+        <input type="text" id="message-field" placeholder="Type your message here" style="display:inline-block">
+        <button onClick="sendMessage()">Send message</button>
+      </div>
+    </div>
+  </body>
+</html>

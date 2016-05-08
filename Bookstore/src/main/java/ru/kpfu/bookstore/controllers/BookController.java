@@ -33,8 +33,7 @@ public class BookController {
   }
 
   @RequestMapping("/book/{id}")
-  public String show(@PathVariable int id, ModelMap map) {
-    Book book = bookRepo.findOne(id);
+  public String show(@PathVariable("id") Book book, ModelMap map) {
     if (book == null) {
       throw new NotFoundException("book");
     }
@@ -69,8 +68,7 @@ public class BookController {
 
   @RequestMapping(value = "/book/edit/{id}", method = RequestMethod.GET)
   @PreAuthorize("hasRole('ADMIN')")
-  public String edit(@PathVariable int id, ModelMap map) {
-    Book book = bookRepo.findOne(id);
+  public String edit(@PathVariable("id") Book book, ModelMap map) {
     if (book == null) {
       throw new NotFoundException("book");
     }
