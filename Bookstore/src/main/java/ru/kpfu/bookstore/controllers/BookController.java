@@ -90,22 +90,19 @@ public class BookController {
       bookRepo.save(book);
       redirectAttributes.addFlashAttribute("message", "Book \"" + book.getName() + "\" has been saved successfully");
       redirectAttributes.addFlashAttribute("messageType", "success");
-      return "redirect:" + MvcUriComponentsBuilder.fromMappingName("BC#edit").arg(0, book.getId()).build();
+      return "redirect:" + MvcUriComponentsBuilder.fromMappingName("BC#edit").arg(0, book).build();
     }
   }
 
   @RequestMapping("/book/delete/{id}")
   @PreAuthorize("hasRole('ADMIN')")
-  public String delete(@PathVariable int id, RedirectAttributes redirectAttributes, ModelMap map) {
+  public String delete(@PathVariable("id") Book book, RedirectAttributes redirectAttributes, ModelMap map) {
     try {
-      bookRepo.delete(id);
+      bookRepo.delete(book);
       redirectAttributes.addFlashAttribute("message", "Book has been deleted successfully");
       redirectAttributes.addFlashAttribute("messageType", "success");
-    } catch (EmptyResultDataAccessException e) {
-      redirectAttributes.addFlashAttribute("message", "Can't find book with id " + id);
-      redirectAttributes.addFlashAttribute("messageType", "fail");
-    } catch (DataAccessException e) {
-      redirectAttributes.addFlashAttribute("message", "Can't delete book with id " + id);
+    }catch (DataAccessException e) {
+      redirectAttributes.addFlashAttribute("message", "Can't delete book.");
       redirectAttributes.addFlashAttribute("messageType", "fail");
     }
     return "redirect:" + MvcUriComponentsBuilder.fromMappingName("BC#list").build();
