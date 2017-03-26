@@ -6,19 +6,26 @@
   <modelVersion>4.0.0</modelVersion>
   
   <groupId>ru.kpfu</groupId>
-  <artifactId>bookstore</artifactId>
+  <artifactId>spring-controllers</artifactId>
   <packaging>war</packaging>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.1</version>
   
-  <name>Book Store</name>
+  <name>Spring Controllers Examples</name>
 
   <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <spring.version>4.2.4.RELEASE</spring.version>
-    <jstl.version>1.2</jstl.version>
-    <javax.servlet.version>3.1.0</javax.servlet.version>
+    <!-- Generic properties -->
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    
+    <!-- Spring -->
+    <spring.version>4.2.4.RELEASE</spring.version>
+    
+    <!-- Java EE / Java SE dependencies -->
+    <java.web.api.version>7.0</java.web.api.version>
+    <jstl.version>1.2</jstl.version>
+    <javax.servlet.version>3.1.0</javax.servlet.version>
   </properties>
   
   <dependencies>
@@ -26,7 +33,7 @@
     <dependency>
       <groupId>javax</groupId>
       <artifactId>javaee-web-api</artifactId>
-      <version>7.0</version>
+      <version>${java.web.api.version}</version>
       <scope>provided</scope>
     </dependency>
       
