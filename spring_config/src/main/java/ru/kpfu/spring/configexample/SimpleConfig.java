@@ -1,4 +1,4 @@
-package info.istamendil.study.springconfig;
+package ru.kpfu.spring.configexample;
 
 import org.springframework.context.annotation.*;
 
@@ -14,7 +14,7 @@ import org.springframework.context.annotation.*;
 public class SimpleConfig {
 
    @Bean 
-   public Book book(){
-      return new Book();
+   public DateFormatter dateFormatter(){
+      return new DateFormatter();
    }
 }

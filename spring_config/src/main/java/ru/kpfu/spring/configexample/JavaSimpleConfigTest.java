@@ -1,5 +1,6 @@
-package info.istamendil.study.springconfig;
+package ru.kpfu.spring.configexample;
 
+import java.util.Calendar;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -19,11 +20,10 @@ public class JavaSimpleConfigTest {
     ApplicationContext context
       = new AnnotationConfigApplicationContext(SimpleConfig.class);
     
-    Book obj = (Book) context.getBean("book");
-    System.out.println( obj );
+    DateFormatter obj = (DateFormatter) context.getBean("dateFormatter");
+    System.out.println( obj.getDateFormatted(Calendar.getInstance()) );
     
-    obj.setName("Spring in Action");
-    obj.setIsbn("9781935182351");
-    System.out.println( obj );
+    obj.setPattern("EEE, MMM d, yyyy");
+    System.out.println( obj.getDateFormatted(Calendar.getInstance()) );
   }
 }

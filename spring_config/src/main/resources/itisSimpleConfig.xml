@@ -7,6 +7,6 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="book" class="info.istamendil.study.springconfig.Book" />
+    <bean id="dateFormatter" class="ru.kpfu.spring.configexample.DateFormatter" />
 
 </beans>
