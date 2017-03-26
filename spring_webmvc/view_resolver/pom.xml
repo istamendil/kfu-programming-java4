@@ -6,11 +6,11 @@
   <modelVersion>4.0.0</modelVersion>
   
   <groupId>ru.kpfu</groupId>
-  <artifactId>bookstore</artifactId>
+  <artifactId>spring-viewresolver</artifactId>
   <packaging>war</packaging>
-  <version>1.0</version>
+  <version>1.1</version>
   
-  <name>Book Store</name>
+  <name>Spring Viewresolver Example</name>
 
   <properties>
     <!-- Generic properties -->

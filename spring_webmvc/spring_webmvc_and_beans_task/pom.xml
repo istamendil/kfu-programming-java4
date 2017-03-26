@@ -6,11 +6,11 @@
   <modelVersion>4.0.0</modelVersion>
   
   <groupId>ru.kpfu</groupId>
-  <artifactId>bookstore</artifactId>
+  <artifactId>spring-webmvc</artifactId>
   <packaging>war</packaging>
   <version>1.0</version>
   
-  <name>Book Store</name>
+  <name>Spring WebMVC example</name>
 
   <properties>
     <!-- Generic properties -->
