@@ -1,4 +1,4 @@
-package ru.kpfu.bookstore.model;
+package ru.kpfu.formsvalidation.model;
 
 import java.net.MalformedURLException;
 import java.net.URL;

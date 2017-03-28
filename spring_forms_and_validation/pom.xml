@@ -6,11 +6,11 @@
   <modelVersion>4.0.0</modelVersion>
   
   <groupId>ru.kpfu</groupId>
-  <artifactId>bookstore</artifactId>
+  <artifactId>spring-formsvalidation</artifactId>
   <packaging>war</packaging>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.1</version>
   
-  <name>Book Store</name>
+  <name>Spring Forms And Validation Example</name>
 
   <properties>
     <!-- Generic properties -->

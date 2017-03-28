@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
   </head>
   <body>
     <a href="<c:url value="/" />">Homepage</a><br><br>
