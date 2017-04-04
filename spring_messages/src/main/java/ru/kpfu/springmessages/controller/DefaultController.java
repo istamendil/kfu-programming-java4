@@ -1,4 +1,4 @@
-package ru.kpfu.bookstore.controller;
+package ru.kpfu.springmessages.controller;
 
 import java.util.Locale;
 import javax.servlet.http.HttpServletRequest;
