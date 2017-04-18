@@ -1,12 +1,12 @@
 #DB properties:
 db.driver=com.mysql.jdbc.Driver
-db.url=jdbc:mysql://localhost:3306/test
+db.url=jdbc:mysql://localhost:3306/bookcatalogue?zeroDateTimeBehavior=convertToNull
 db.username=root
 db.password=
 
 #Hibernate Configuration:
 hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
 hibernate.show_sql=true
-entitymanager.packages.to.scan=ru
+entitymanager.packages.to.scan=ru.kpfu.jpa.model
 hibernate.hbm2ddl.auto =update
 hibernate.enable_lazy_load_no_trans=true
