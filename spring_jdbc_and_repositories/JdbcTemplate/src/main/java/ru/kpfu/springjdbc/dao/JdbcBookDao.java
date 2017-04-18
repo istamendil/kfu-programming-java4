@@ -1,4 +1,4 @@
-package ru.kpfu.bookstore.dao;
+package ru.kpfu.springjdbc.dao;
 
 import java.sql.ResultSet;
 import javax.sql.DataSource;
@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import ru.kpfu.bookstore.model.Book;
+import ru.kpfu.springjdbc.model.Book;
 
 @Repository
 public class JdbcBookDao implements BookDao { // What methods should we add by typical DAO definition?

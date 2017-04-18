@@ -1,7 +1,7 @@
-package ru.kpfu.bookstore.dao;
+package ru.kpfu.springjdbc.dao;
 
 import org.springframework.stereotype.Repository;
-import ru.kpfu.bookstore.model.Book;
+import ru.kpfu.springjdbc.model.Book;
 
 // Dao or Repository?
 @Repository
