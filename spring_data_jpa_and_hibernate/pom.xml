@@ -6,11 +6,11 @@
   <modelVersion>4.0.0</modelVersion>
   
   <groupId>ru.kpfu</groupId>
-  <artifactId>bookstore</artifactId>
+  <artifactId>jpa</artifactId>
   <packaging>war</packaging>
-  <version>1.0-Alpha</version>
+  <version>1.1</version>
   
-  <name>Book Store</name>
+  <name>Spring JPA Example</name>
 
   <properties>
     <!-- Generic properties -->
@@ -20,8 +20,8 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
     <!-- Spring -->
-    <spring-framework.version>4.1.6.RELEASE</spring-framework.version>
-    <spring-data-jpa.version>1.8.0.RELEASE</spring-data-jpa.version>
+    <spring-framework.version>4.3.7.RELEASE</spring-framework.version>
+    <spring-data-jpa.version>1.11.1.RELEASE</spring-data-jpa.version>
 
 
     <!-- Java EE / Java SE dependencies -->
@@ -33,13 +33,16 @@
     <hibernate.version>5.1.0.Final</hibernate.version>
 
     <!-- Bean validation -->
-    <hibernate-validator.version>4.3.1.Final</hibernate-validator.version>
+    <hibernate-validator.version>5.4.1.Final</hibernate-validator.version>
 
     <!-- AOP -->
     <aspectj.version>1.8.5</aspectj.version>
     
     <!-- DB dependencies -->
     <mysql.version>5.1.22</mysql.version>
+    
+    <!-- Other stuff dependencies -->
+    <jackson.version>2.8.7</jackson.version>
   </properties>
   
   <dependencies>
@@ -145,6 +148,14 @@
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
       <version>${mysql.version}</version>
+    </dependency>
+    
+    <!-- Other stuff -->
+    <!-- Thanks to bad dependency requirenments Jackson must be included explicitly. -->
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-core</artifactId>
+      <version>${jackson.version}</version>
     </dependency>
   </dependencies>
 

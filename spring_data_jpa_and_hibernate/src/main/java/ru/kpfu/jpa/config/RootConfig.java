@@ -1,4 +1,4 @@
-package ru.kpfu.bookstore.config;
+package ru.kpfu.jpa.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -19,8 +19,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @Configuration
 @EnableTransactionManagement
-@ComponentScan(basePackages = {"ru.kpfu.bookstore.model"})
-@EnableJpaRepositories(basePackages = {"ru.kpfu.bookstore.repository"})
+@ComponentScan(basePackages = {"ru.kpfu.jpa.model"})
+@EnableJpaRepositories(basePackages = {"ru.kpfu.jpa.repository"})
 @PropertySource("classpath:/app.properties")
 public class RootConfig {
 

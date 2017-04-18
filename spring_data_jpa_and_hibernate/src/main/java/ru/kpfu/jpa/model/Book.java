@@ -1,4 +1,4 @@
-package ru.kpfu.bookstore.model;
+package ru.kpfu.jpa.model;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -13,7 +13,7 @@ public class Book implements Serializable { // Why Serializable?
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id", unique = true, nullable = false)
-  private int id;
+  private Integer id = -1;
   
   @Size(min = 1, max = 255)
   @Column
