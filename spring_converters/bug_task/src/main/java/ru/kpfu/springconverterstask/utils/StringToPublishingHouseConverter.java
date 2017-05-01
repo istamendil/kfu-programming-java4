@@ -1,11 +1,10 @@
-package ru.kpfu.bookstore.utils;
+package ru.kpfu.springconverterstask.utils;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
-import org.springframework.stereotype.Component;
 
-import ru.kpfu.bookstore.models.PublishingHouse;
-import ru.kpfu.bookstore.repositories.PublishingHouseRepository;
+import ru.kpfu.springconverterstask.models.PublishingHouse;
+import ru.kpfu.springconverterstask.repositories.PublishingHouseRepository;
 
 public class StringToPublishingHouseConverter implements Converter<String, PublishingHouse> {
 

@@ -1,12 +1,13 @@
-package ru.kpfu.bookstore.models;
+package ru.kpfu.springconverterstask.models;
 
+import java.io.Serializable;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import org.hibernate.validator.constraints.*;
 
 @Entity
 @Table(name = "book")
-public class Book{
+public class Book implements Serializable{
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
@@ -110,7 +111,5 @@ public class Book{
   public void setPublishingHouse(PublishingHouse publishingHouse) {
     this.publishingHouse = publishingHouse;
   }
-  
-  
 
 }

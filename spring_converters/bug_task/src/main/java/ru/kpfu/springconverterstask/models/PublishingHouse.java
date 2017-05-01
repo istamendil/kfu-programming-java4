@@ -1,10 +1,10 @@
-package ru.kpfu.bookstore.models;
+package ru.kpfu.springconverterstask.models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.*;
 import javax.validation.constraints.*;
-import org.springframework.util.AutoPopulatingList;
 
 /**
  *
@@ -12,7 +12,7 @@ import org.springframework.util.AutoPopulatingList;
  */
 @Entity
 @Table(name = "publishing_house")
-public class PublishingHouse {
+public class PublishingHouse implements Serializable {
   
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,12 +20,13 @@ public class PublishingHouse {
   private int id;
   
   @OneToMany(mappedBy = "publishingHouse", fetch = FetchType.LAZY)
-  private List<Book> books = new ArrayList<Book>();
+  private List<Book> books = new ArrayList<>();
   
   @NotNull
   @Size(min = 1, max = 255)
   private String name;
   
+  @Override
   public String toString(){
     return getName();
   }
@@ -53,7 +54,5 @@ public class PublishingHouse {
   public void setBooks(List<Book> books) {
     this.books = books;
   }
-  
-  
   
 }

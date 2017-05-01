@@ -1,4 +1,4 @@
-package ru.kpfu.bookstore.exceptions;
+package ru.kpfu.springconverterstask.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

@@ -1,4 +1,4 @@
-package ru.kpfu.bookstore.config;
+package ru.kpfu.springconverterstask.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,7 +18,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories("ru.kpfu.bookstore.repositories")
+@EnableJpaRepositories("ru.kpfu.springconverterstask.repositories")
 @PropertySource("classpath:app.properties")
 public class RootConfig {
 
