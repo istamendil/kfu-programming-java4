@@ -2,11 +2,13 @@ package ru.kpfu.spring.configexample;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Locale;
 
 /**
+ * 
+ * Code for studying purposes. Programming course, 4th semestr.
+ * Kazan Federal University, ITIS. http://study.istamendil.info/
  *
- * @author Alexander Ferenets (aka Istamendil) – http://istamendil.info
+ * @author Alexander Ferenets (Istamendil) <ist.kazan@gmail.com>
  */
 public class DateFormatter {
 

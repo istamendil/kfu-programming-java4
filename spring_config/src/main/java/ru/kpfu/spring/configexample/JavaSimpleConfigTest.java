@@ -11,7 +11,6 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  *
  * @author Alexander Ferenets (Istamendil) <ist.kazan@gmail.com>
  */
-
 public class JavaSimpleConfigTest {
 
   public static void main(String[] args) {
