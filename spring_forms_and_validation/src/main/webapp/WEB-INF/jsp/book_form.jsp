@@ -11,7 +11,7 @@
     <c:if test="${not empty message}">
       <h1>${message}</h1>
     </c:if>
-    <form:form method="POST" commandName="book">
+    <form:form method="POST" modelAttribute="book">
       <form:label path="name">Name</form:label>
       <form:input path="name"/>
       <form:errors path="name" /><br>
