@@ -7,8 +7,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
-import org.springframework.web.servlet.view.InternalResourceViewResolver;
-import org.springframework.web.servlet.view.JstlView;
 
 @Configuration
 @ComponentScan("ru.kpfu.springjtwig.controllers")
@@ -19,7 +17,7 @@ public class Config extends WebMvcConfigurerAdapter {
   public ViewResolver viewResolver() {
     JtwigViewResolver resolver = new JtwigViewResolver();
     resolver.setPrefix("web:/WEB-INF/views/");
-    resolver.setSuffix(".twig.html");
+    resolver.setSuffix(".html.twig");
     resolver.setRedirectContextRelative(false);
     return resolver;
   }
