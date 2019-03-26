@@ -20,7 +20,7 @@ public class Book implements Serializable { // Why Serializable?
   private String name;
   
   @Length(max = 65535)
-  @Column
+  @Column(columnDefinition="text")
   private String description;
   
   @Pattern(regexp = "[0-9]{10,14}")

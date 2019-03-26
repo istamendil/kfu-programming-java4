@@ -1,6 +1,6 @@
 #DB properties:
 db.driver=com.mysql.jdbc.Driver
-db.url=jdbc:mysql://localhost:3306/bookcatalogue?zeroDateTimeBehavior=convertToNull
+db.url=jdbc:mysql://localhost:3306/java4_books_simple?zeroDateTimeBehavior=convertToNull&serverTimezone=UTC
 db.username=root
 db.password=
 
@@ -8,5 +8,9 @@ db.password=
 hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
 hibernate.show_sql=true
 entitymanager.packages.to.scan=ru.kpfu.jpa.model
-hibernate.hbm2ddl.auto =update
+hibernate.hbm2ddl.auto=create
 hibernate.enable_lazy_load_no_trans=true
+# Hibernate tries to use @Generated value of type table what is wrong
+# https://vladmihalcea.com/why-should-not-use-the-auto-jpa-generationtype-with-mysql-and-hibernate/
+# https://hibernate.atlassian.net/browse/HHH-11014
+hibernate.id.new_generator_mappings=true

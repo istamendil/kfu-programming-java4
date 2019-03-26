@@ -9,7 +9,7 @@
     <c:when test="${not empty book}">
       <h1 class="book-name">${book.name}</h1>
       <div class="book-field">
-        <span class="field-name">Year:</span>
+        <span class="field-name">Published:</span>
         <span class="field-value">${book.published}</span>
       </div>
       <div class="book-field">

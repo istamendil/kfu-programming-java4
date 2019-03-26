@@ -5,7 +5,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <t:mainLayout title="New">
-  <form:form class="form-horizontal" method="POST" commandName="book">
+  <form:form class="form-horizontal" method="POST" modelAttribute="book">
     <t:input label="Name" required="true" path="name"/>
     <t:input label="Published" required="true" path="published"/>
     <t:input label="Pages" required="true" path="pages"/>

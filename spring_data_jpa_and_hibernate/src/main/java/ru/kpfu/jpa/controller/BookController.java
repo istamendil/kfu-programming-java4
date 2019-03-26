@@ -27,7 +27,7 @@ public class BookController {
 
   @RequestMapping("/book/{id}")
   public String show(@PathVariable int id, ModelMap map) {
-    map.put("book", bookRepo.findOne(id));
+    map.put("book", bookRepo.findById(id).get());
     return "books/show";
   }
 
@@ -58,7 +58,7 @@ public class BookController {
   @RequestMapping("/book/{id}/delete")
   public String delete(@PathVariable int id, RedirectAttributes redirectAttributes, ModelMap map) {
     try{
-      bookRepo.delete(id);
+      bookRepo.deleteById(id);
       redirectAttributes.addFlashAttribute("message", "Book has been deleted successfully");
       redirectAttributes.addFlashAttribute("messageType", "success");
     }
