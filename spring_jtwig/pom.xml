@@ -20,7 +20,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     
     <!-- Spring -->
-    <spring.version>5.1.4.RELEASE</spring.version>
+    <spring.version>5.1.14.RELEASE</spring.version>
 
     <!-- Java EE / Java SE dependencies -->
     <java.web.api.version>8.0</java.web.api.version>
