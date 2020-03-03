@@ -15,10 +15,13 @@ hs_err_pid*
 *~
 
 app.properties
-target/
-nbactions.xml
-manifest.mf
+# Maven, Netbeans, Idea
+*.iml
 build.xml
 build/
-nbproject/
+.idea/
+manifest.mf
 nb-configuration.xml
+nbactions.xml
+nbproject/
+target/
