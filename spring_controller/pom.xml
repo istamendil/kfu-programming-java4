@@ -26,7 +26,7 @@
     <spring.version>5.1.4.RELEASE</spring.version>
     
     <!-- Other stuff dependencies -->
-    <jackson.version>2.9.8</jackson.version>
+    <jackson.version>2.10.3</jackson.version>
   </properties>
   
   <dependencies>
