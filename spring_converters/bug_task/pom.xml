@@ -40,7 +40,7 @@
     <aspectj.version>1.8.5</aspectj.version>
     
     <!-- DB dependencies -->
-    <mysql.version>5.1.22</mysql.version>
+    <mysql.version>8.0.16</mysql.version>
   </properties>
   
   <dependencies>
