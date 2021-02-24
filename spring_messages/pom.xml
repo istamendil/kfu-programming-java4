@@ -18,20 +18,26 @@
     <maven.compiler.target>1.8</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    
+
     <!-- Java EE / Java SE dependencies -->
-    <java.web.api.version>7.0</java.web.api.version>
-    <jstl.version>1.2</jstl.version>
-    <javax.servlet.version>3.1.0</javax.servlet.version>
-    
+    <java.web.api.version>8.0</java.web.api.version>
+
     <!-- Spring -->
-    <spring.version>4.1.5.RELEASE</spring.version>
+    <spring.version>5.1.4.RELEASE</spring.version>
+
+    <!-- Project specific stuff -->
+    <hibernate.validator.version>6.0.15.Final</hibernate.validator.version>
+    <java.validator.version>2.0.1.Final</java.validator.version>
+
+    <!-- Other stuff dependencies -->
+    <jackson.version>2.9.8</jackson.version>
     
   </properties>
   
   <dependencies>
-    
+
     <!-- JAVA stuff -->
+    <!-- Servlet + EJB Lite + JPA + JSP + EL + JSTL + JSF + JTA + JSR-45 + JSR-250 -->
     <dependency>
       <groupId>javax</groupId>
       <artifactId>javaee-web-api</artifactId>
@@ -39,51 +45,35 @@
       <scope>provided</scope>
     </dependency>
 
-    <dependency>  
-      <groupId>javax.servlet</groupId>  
-      <artifactId>javax.servlet-api</artifactId>  
-      <version>${javax.servlet.version}</version>  
-      <scope>provided</scope>  
-    </dependency>
-     
-    <dependency>  
-      <groupId>jstl</groupId>  
-      <artifactId>jstl</artifactId>  
-      <version>${jstl.version}</version>  
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>jstl</artifactId>
+      <version>1.2</version>
+      <scope>compile</scope>
     </dependency>
       
       
     <!-- Spring Framework -->
     <dependency>
       <groupId>org.springframework</groupId>
-      <artifactId>spring-core</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-web</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
       <version>${spring.version}</version>
     </dependency>
-  </dependencies>
 
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-war-plugin</artifactId>
-        <version>2.3</version>
-        <configuration>
-          <failOnMissingWebXml>false</failOnMissingWebXml>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
+    <!-- Other stuff -->
+    <!-- Thanks to bad dependency requirements Jackson must be included explicitly. -->
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-core</artifactId>
+      <version>${jackson.version}</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>${jackson.version}</version>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
   
 </project>
