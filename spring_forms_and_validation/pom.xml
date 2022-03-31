@@ -23,7 +23,7 @@
     <java.web.api.version>8.0</java.web.api.version>
     
     <!-- Spring -->
-    <spring.version>5.1.4.RELEASE</spring.version>
+    <spring.version>5.3.18</spring.version>
     
     <!-- Project specific stuff -->
     <hibernate.validator.version>6.0.15.Final</hibernate.validator.version>
