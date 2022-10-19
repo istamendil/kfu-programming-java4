@@ -30,7 +30,7 @@
     <java.validator.version>2.0.1.Final</java.validator.version>
     
     <!-- Other stuff dependencies -->
-    <jackson.version>2.9.8</jackson.version>
+    <jackson.version>2.13.4.1</jackson.version>
     
   </properties>
   
