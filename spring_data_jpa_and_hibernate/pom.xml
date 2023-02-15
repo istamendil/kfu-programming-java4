@@ -39,7 +39,7 @@
     <mysql.version>8.0.16</mysql.version>
     
     <!-- Other stuff dependencies -->
-    <jackson.version>2.11.3</jackson.version>
+    <jackson.version>2.12.7.1</jackson.version>
   </properties>
   
   <dependencies>
